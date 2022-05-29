@@ -6,3 +6,6 @@
 
 > **Warning**
 > Discord.js v13 is required [NPM](https://www.npmjs.com/package/discord.js)
+
+> **Bug**
+> A
