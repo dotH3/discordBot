@@ -11,6 +11,7 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
+
 client.on('messageCreate' , (message)=>{
     if(message.author.bot)return
     const messageArray = message.content.split(' ');
@@ -44,7 +45,6 @@ client.on('messageCreate' , (message)=>{
             .addField('Creado el', server.createdAt.toLocaleDateString())
             .addField('Miembros', server.memberCount.toString())
             .addField('Roles', serveroles.toString())
-            .addField('Members', server.members.guild.map(role => role.toString()).toString())
             .setColor(color)
             .setTimestamp()
         message.channel.send({embeds:[embed]});
