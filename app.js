@@ -1,5 +1,6 @@
 const { Client, Intents, MessageEmbed, Collection} = require("discord.js");
 const client = new Client({intents: ['GUILDS', 'GUILD_MESSAGES']});
+const fs = require('fs');
 const prefix = '!';
 
 client.commands = new Collection();
@@ -11,8 +12,14 @@ for(file of commands){
 }
 
 
+
+
 require("dotenv").config();
 const token = process.env.TOKEN;
+// const color = process.env.COLOR;
+// const admin_id = process.env.ADMIN_ID;
+// const prefix = process.env.PREFIX;
+// 
 
 client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}!`);
