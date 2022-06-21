@@ -12,23 +12,36 @@ for(file of commands){
 }
 
 
-
-
 require("dotenv").config();
 const token = process.env.TOKEN;
+const mod = {
+  guildId:'754442599175159940',
+  channelDiscord:'822827064339464202',
+  channelYoutube:'987428805423534100'
+}
+
 // const color = process.env.COLOR;
 // const admin_id = process.env.ADMIN_ID;
 // const prefix = process.env.PREFIX;
-// 
 
 client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
-client.on("messageCreate", (message) => {
+client.on("messageCreate", async (message) => {
   if (message.author.bot) return;
   // const server = message.guild;
   // const serveroles = message.guild.roles.cache.sort((a, b) => b.position - a.position).map((role) => role.toString());
+
+  // console.log(message);
+  if(message.guildId==mod.guildId){
+    if(message.channelId==mod.channelDiscord){
+      if(message.content.includes('youtube.com') || message.content.includes('youtu.be')){
+        await message.reply({content:`Usa el canal <#${mod.channelYoutube}>`});
+        message.delete(); 
+      }
+    }
+  }
 
   if(message.content.startsWith(prefix)){
     const args = message.content.slice(prefix.length).trim().split(/ + /g);
