@@ -36,18 +36,18 @@ client.on("messageCreate", async (message) => {
   // console.log(message);
 
   // SERVER AUTO-MOD
-  if(message.guildId==mod.guildId){
-    if(message.channelId==mod.channelDiscord){
-      if(message.content.includes('youtube.com') || message.content.includes('youtu.be')){
-        await message.reply({content:`Usa el canal <#${mod.channelYoutube}>`});
-        message.delete(); 
-      }
-    }
-  }
+  // if(message.guildId==mod.guildId){
+  //   if(message.channelId==mod.channelDiscord){
+  //     if(message.content.includes('youtube.com') || message.content.includes('youtu.be')){
+  //       await message.reply({content:`Usa el canal <#${mod.channelYoutube}>`});
+  //       message.delete(); 
+  //     }
+  //   }
+  // }
 
   if(message.author.id=='543328753971888131'){
-    await message.channel.send({'content':'Un mogolico quiere hablar . . .'})
     message.delete();
+    return;
   }
 
   if(message.content.startsWith(prefix)){
