@@ -34,6 +34,8 @@ client.on("messageCreate", async (message) => {
   // const serveroles = message.guild.roles.cache.sort((a, b) => b.position - a.position).map((role) => role.toString());
 
   // console.log(message);
+
+  // SERVER AUTO-MOD
   if(message.guildId==mod.guildId){
     if(message.channelId==mod.channelDiscord){
       if(message.content.includes('youtube.com') || message.content.includes('youtu.be')){
@@ -41,6 +43,11 @@ client.on("messageCreate", async (message) => {
         message.delete(); 
       }
     }
+  }
+
+  if(message.author.id=='543328753971888131'){
+    await message.channel.send({'content':'Un mogolico quiere hablar . . .'})
+    message.delete();
   }
 
   if(message.content.startsWith(prefix)){
