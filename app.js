@@ -46,6 +46,7 @@ client.on("messageCreate", async (message) => {
   // }
 
   if(message.author.id=='543328753971888131'){
+    // await message.reply({content:"El mogolico quiere hablar"});
     message.delete();
     return;
   }
