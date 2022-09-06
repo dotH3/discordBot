@@ -2,10 +2,10 @@
   "name": "discordbot",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "node src/bot.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js"
+    "start": "node src/bot.js",
+    "dev": "node src/bot.js"
   },
   "keywords": [],
   "author": "",
