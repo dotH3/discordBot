@@ -1,0 +1,4 @@
+[
+    {"name":"ping", "description":"Replies with Pong!"},
+    {"name":"avatar", "description":"QUE LINDO ERES!"}
+]
